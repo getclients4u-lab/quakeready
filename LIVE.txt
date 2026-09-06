@@ -1,0 +1,3 @@
+QuakeReady™ — The 90-Second Earthquake Survival System™
+Live: https://quakeready-glow.vercel.app
+Built: 2026-09-06
