@@ -38,6 +38,7 @@ Google Trends (US): **"earthquake now" is the #1 trending topic** (~20,000+ traf
 - repo: github.com/getclients4u-lab/quakeready
 - data repo (private): github.com/getclients4u-lab/quakeready-data
 - Vercel project: quakeready (git-linked, ssoProtection off)
+- Command Center: registered &amp; UP (200, 128ms) — dashboard live at command-center-getclients4u.vercel.app
 
 ## Stripe (TEST MODE)
 - Payment link: https://buy.stripe.com/test_dRmdRafzy1gL3zp0Kz1Nu0l
