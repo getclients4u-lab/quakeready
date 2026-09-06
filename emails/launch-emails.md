@@ -101,7 +101,7 @@ The 90-Second Earthquake Survival System™ replaces "I'll figure it out" with a
 ---
 
 ### Sending notes
-- Replace `__LANDING_URL__` with the live URL: **https://quakeready.vercel.app/**
+- Replace `__LANDING_URL__` with the live URL: **https://quakeready-glow.vercel.app/**
 - Teaser → launch gap: 48h. Launch → follow-up gap: 48h. Follow-up sends at 4:00 PM (high open window).
 - Subject lines use curiosity + specificity; bodies use story → mechanism → offer → guarantee.
 - Wire all CTAs to the landing page (which points to the Stripe checkout link).

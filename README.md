@@ -33,8 +33,8 @@ Google Trends (US): **"earthquake now" is the #1 trending topic** (~20,000+ traf
 - `assets/logo.svg` — brand logo
 
 ## Live URL
-**→ https://quakeready.vercel.app/** (HTTP 200 verified)
-- thank-you: https://quakeready.vercel.app/thank-you.html (200)
+**→ https://quakeready-glow.vercel.app/** (HTTP 200 verified)
+- thank-you: https://quakeready-glow.vercel.app/thank-you.html (200)
 - repo: github.com/getclients4u-lab/quakeready
 - data repo (private): github.com/getclients4u-lab/quakeready-data
 - Vercel project: quakeready (git-linked, ssoProtection off)
