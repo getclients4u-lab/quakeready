@@ -1,1 +1,3 @@
-.vercel
+# NEVER commit product files to the public repo
+product/
+*.pdf
