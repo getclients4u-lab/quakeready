@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="400" height="120">
+  <defs>
+    <linearGradient id="amber" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f97316"/>
+    </linearGradient>
+  </defs>
+  <!-- seismograph line -->
+  <polyline points="20,80 40,80 50,78 58,82 66,60 74,40 82,78 90,84 100,80 120,80"
+    fill="none" stroke="url(#amber)" stroke-width="3" stroke-linecap="round"/>
+  <!-- shield -->
+  <path d="M200,22 L248,38 L248,72 C248,96 226,108 200,114 C174,108 152,96 152,72 L152,38 Z"
+    fill="none" stroke="#eaf0ff" stroke-width="4"/>
+  <path d="M192,64 L200,76 L220,50" fill="none" stroke="url(#amber)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="280" y="62" font-family="Arial,Helvetica,sans-serif" font-size="40" font-weight="800" fill="#eaf0ff">Quake</text>
+  <text x="280" y="100" font-family="Arial,Helvetica,sans-serif" font-size="40" font-weight="800" fill="url(#amber)">Ready</text>
+  <text x="278" y="116" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="600" fill="#93a3c0" letter-spacing="4">TM</text>
+</svg>

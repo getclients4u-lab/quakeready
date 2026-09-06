@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QuakeReady™ — Your Downloads</title>
+<style>
+  :root { --bg:#0a0f1e; --panel:#111a30; --line:#24304d; --txt:#eaf0ff; --dim:#93a3c0; --accent:#fbbf24; --good:#34d399; --bad:#f87171; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--txt); font-family:'Segoe UI',system-ui,sans-serif; min-height:100vh; }
+  .wrap { max-width:800px; margin:0 auto; padding:40px 20px 80px; }
+  .logo { font-size:22px; font-weight:700; margin-bottom:6px; }
+  .logo span { color:var(--accent); }
+  .sub { color:var(--dim); font-size:14px; margin-bottom:32px; }
+  .gate { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:28px; margin-bottom:28px; }
+  .gate h2 { font-size:18px; margin-bottom:8px; }
+  .gate p { color:var(--dim); font-size:13px; margin-bottom:18px; }
+  input { width:100%; background:var(--bg); border:1px solid var(--line); color:var(--txt); padding:12px 14px; border-radius:8px; font-size:15px; margin-bottom:12px; }
+  .btn { background:var(--accent); color:#1a1400; border:none; padding:12px 20px; border-radius:8px; font-weight:700; font-size:14px; cursor:pointer; width:100%; }
+  .btn:hover { filter:brightness(1.1); }
+  .err { color:var(--bad); font-size:13px; margin-top:10px; min-height:18px; }
+  .locked { display:none; }
+  .files { display:grid; gap:12px; }
+  .file { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px 18px; display:flex; align-items:center; justify-content:space-between; gap:14px; }
+  .file h3 { font-size:15px; margin-bottom:3px; }
+  .file p { color:var(--dim); font-size:12.5px; line-height:1.45; }
+  .file .btn { width:auto; padding:9px 16px; font-size:12.5px; flex-shrink:0; }
+  .badge { display:inline-block; background:rgba(52,211,153,0.12); color:var(--good); font-size:11px; padding:2px 10px; border-radius:12px; font-weight:600; margin-bottom:6px; }
+  footer { margin-top:40px; text-align:center; color:var(--dim); font-size:12px; }
+  .start { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:20px; margin-bottom:16px; }
+  .start h3 { font-size:16px; margin-bottom:8px; }
+  .start ol { padding-left:20px; color:var(--dim); font-size:13.5px; line-height:1.9; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="logo">🛡️ Quake<span>Ready</span>™</div>
+  <div class="sub">The 90-Second Earthquake Survival System™ — your member downloads</div>
+
+  <div id="gateBox" class="gate">
+    <h2>🔐 Unlock your downloads</h2>
+    <p>Enter the email you purchased with and your personal access code (sent in your order confirmation email).</p>
+    <input id="email" type="email" placeholder="you@email.com" autocomplete="email">
+    <input id="code" type="text" placeholder="QR-XXXXX-XXXXX" autocomplete="off">
+    <button class="btn" onclick="unlock()">Unlock →</button>
+    <div class="err" id="err"></div>
+  </div>
+
+  <div id="memberArea" class="locked">
+    <div class="start">
+      <span class="badge">✅ Unlocked</span>
+      <h3>Start here — your 4-Phase Quake Protocol™ path</h3>
+      <ol>
+        <li><b>PRINT (tonight):</b> the Aftershock &amp; Post-Quake Safety Card (Tool #6) — post it where everyone will see it</li>
+        <li><b>THIS WEEK:</b> run the 20-Minute Home Hazard Hunt and fix every HIGH-priority item</li>
+        <li><b>THIS WEEKEND:</b> build every household member's 72-Hour Go-Bag + the car kit</li>
+        <li><b>QUARTERLY:</b> run the Drop-Cover-Hold drill and review the 12-Week Tracker</li>
+      </ol>
+    </div>
+    <div class="files">
+      <div class="file">
+        <div><h3>📘 1. The QuakeReady Core Guide</h3><p>Your roadmap — the 4-Phase Quake Protocol™ (Before → During → After → Recover) and how the whole system fits together. Start here.</p></div>
+        <button class="btn" onclick="dl('core-guide.pdf', this)">Download</button>
+      </div>
+      <div class="file">
+        <div><h3>🔍 2. The 20-Minute Home Hazard Hunt</h3><p>Find every tip-over, falling-glass, and gas/water risk in your home — one room-by-room pass, with a fix-it priority list.</p></div>
+        <button class="btn" onclick="dl('home-hazard-hunt.pdf', this)">Download</button>
+      </div>
+      <div class="file">
+        <div><h3>🎒 3. The 72-Hour Go-Bag Checklist</h3><p>Build a real grab-and-go kit for every person in your household — plus the car kit. Water, cash, meds, and more.</p></div>
+        <button class="btn" onclick="dl('go-bag-checklist.pdf', this)">Download</button>
+      </div>
+      <div class="file">
+        <div><h3>🧎 4. The Drop, Cover, Hold On Drill</h3><p>Train the 90-second reflex until it's automatic — location-specific moves plus the timed family drill script.</p></div>
+        <button class="btn" onclick="dl('drop-cover-hold-drill.pdf', this)">Download</button>
+      </div>
+      <div class="file">
+        <div><h3>🏠 5. The Family Emergency Plan</h3><p>Meeting points, out-of-area contact, and the text-first reconnect protocol — fill it in, post it, practice it.</p></div>
+        <button class="btn" onclick="dl('family-emergency-plan.pdf', this)">Download</button>
+      </div>
+      <div class="file">
+        <div><h3>🚨 6. The Aftershock &amp; Post-Quake Safety Card</h3><p>Exact steps for the critical first hour — gas check, hazards, communication. Print this and keep it visible.</p></div>
+        <button class="btn" onclick="dl('aftershock-safety-card.pdf', this)">Download</button>
+      </div>
+      <div class="file">
+        <div><h3>🚗 7. The Work/Car/Travel Playbook</h3><p>The correct move wherever you are — office, car, transit, store, gym, hotel, and coastal areas.</p></div>
+        <button class="btn" onclick="dl('work-car-travel-playbook.pdf', this)">Download</button>
+      </div>
+      <div class="file">
+        <div><h3>📅 8. The 12-Week Quake-Ready Tracker</h3><p>Ten minutes a week keeps the whole system alive — with a rotating family duty roster and mastery scorecard.</p></div>
+        <button class="btn" onclick="dl('12-week-tracker.pdf', this)">Download</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>QuakeReady™ · based on public guidance from FEMA, Ready.gov, USGS &amp; the American Red Cross · not a substitute for official emergency instructions</footer>
+</div>
+
+<script>
+function unlock() {
+  const email = document.getElementById('email').value.trim();
+  const code = document.getElementById('code').value.trim();
+  const err = document.getElementById('err');
+  if (!email || !code) { err.textContent = 'Please enter both email and access code.'; return; }
+  fetch('/api/verify', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, code }) })
+    .then(r => r.json())
+    .then(d => {
+      if (d.ok) {
+        sessionStorage.setItem('qr_email', email);
+        sessionStorage.setItem('qr_code', code);
+        document.getElementById('gateBox').style.display = 'none';
+        document.getElementById('memberArea').classList.remove('locked');
+        document.getElementById('memberArea').style.display = 'block';
+        err.textContent = '';
+      } else {
+        err.textContent = d.error || 'Access denied. Check your code and email.';
+      }
+    })
+    .catch(() => { err.textContent = 'Network error — try again.'; });
+}
+
+function dl(file, btn) {
+  const email = sessionStorage.getItem('qr_email');
+  const code = sessionStorage.getItem('qr_code');
+  if (!email || !code) { alert('Session expired — please unlock again.'); location.reload(); return; }
+  const orig = btn.textContent;
+  btn.textContent = '⏳ …';
+  btn.disabled = true;
+  fetch('/api/download', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, code, file }) })
+    .then(async r => {
+      if (!r.ok) { const d = await r.json().catch(() => ({})); throw new Error(d.error || 'Download failed (' + r.status + ')'); }
+      const blob = await r.blob();
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = file;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      btn.textContent = '✅ Sent';
+    })
+    .catch(e => { alert(e.message); btn.textContent = orig; })
+    .finally(() => { btn.disabled = false; setTimeout(() => { if (btn.textContent === '✅ Sent') btn.textContent = orig; }, 2500); });
+}
+
+// auto-unlock if already verified this session
+const em = sessionStorage.getItem('qr_email');
+const ec = sessionStorage.getItem('qr_code');
+if (em && ec) {
+  fetch('/api/verify', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: em, code: ec }) })
+    .then(r => r.json())
+    .then(d => { if (d.ok) { document.getElementById('gateBox').style.display = 'none'; document.getElementById('memberArea').classList.remove('locked'); document.getElementById('memberArea').style.display = 'block'; } });
+}
+document.getElementById('code').addEventListener('keydown', (e) => { if (e.key === 'Enter') unlock(); });
+</script>
+</body>
+</html>
